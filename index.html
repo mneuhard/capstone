@@ -68,8 +68,10 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
+		
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -94,6 +96,28 @@
 				</div>
                 <div class="carousel-caption">
                     <h2>The Solution</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('img/africa6.jpg');">
+					<br><br><br><br><br><br><br><Br>
+					<center>
+						<!-- Call to Action Section -->
+						<div class="well" style="width:60%">
+							<div class="row">
+								<div class="col-md-8">
+									<p>For more information, such as presentations, written materials and links to other capstone projects from the iSchool @ UC Berkeley, please visit our Capstone Showcase Page!</p>
+								</div>
+								<div class="col-md-4">
+									<a class="btn btn-lg btn-default btn-block" href="https://www.ischool.berkeley.edu/projects/2017/pressure-real-time-crisis-navigator" target="_new">More Information</a>
+								</div>
+							</div>
+						</div>
+						<img style="width: 500px" src="https://www.ischool.berkeley.edu/sites/all/themes/custom/i_school/images/logos/berkeleyischool-logo-blue.svg">
+					</center>
+				</div>
+                <div class="carousel-caption">
+                    <h2>More Information</h2>
                 </div>
             </div>
         </div>
@@ -226,17 +250,14 @@
 				 <h2 id="theproblem" class="page-header">The Problem</h2>
             </div>
             <div class="col-md-6">
-                <p>The Modern Business template by Start Bootstrap includes:</p>
+                <p>Workers can be taken by surprise when a dangerous situation arises. One of our team members has had employees working in Nigeria when a person came running in explaining that a bombing had just occurred in the town. If would have been invaluable for those employees to have relevant information at their fingertips that can alert them of the danger and help them avoid it is invaluable.  This tool gives travellers/foreign aid workers the information they need to navigate a crisis situation. </p>
                 <ul>
-                    <li><strong>Bootstrap v3.3.7</strong>
-                    </li>
-                    <li>jQuery v1.11.1</li>
-                    <li>Font Awesome v4.2.0</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                    <li>17 HTML pages</li>
+                    <li>No Information</li>
+                    <li>Limited News</li>
+                    <li>Multiple languages</li>
+                    <li>No directions</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+                <p>Contextually aware information can lead to better crisis situation outcomes.</p>
             </div>
             <div class="col-md-6">
                 <img class="img-responsive img-rounded" style="height: 450px" src="img/multiple_apps.png" alt="">
@@ -252,17 +273,14 @@
 				 <h2 id="themethod" class="page-header">The Method</h2>
             </div>
             <div class="col-md-6">
-                <p>The Modern Business template by Start Bootstrap includes:</p>
+                <p>News reporting can be too late to really alert someone of a potential problem.  However Twitter data is real time giving access to a large amount of data that can be processed to determine if a potential incident exists.  The Pressure-Real time navigatory monitors the tweet stream and looks for potential issues.  These issues or spikes are shown to the users allowing them to make real time decisions on up to the second data.  We then combine this with news, safe harbor locations, context and geolocation aware directions with Google maps integration to help give the traveller as much advanced notice and decision making information as possible.</p>
                 <ul>
-                    <li><strong>Bootstrap v3.3.7</strong>
-                    </li>
-                    <li>jQuery v1.11.1</li>
-                    <li>Font Awesome v4.2.0</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                    <li>17 HTML pages</li>
+                    <li>Twitter Stream</li>
+                    <li>Google Custome Search Engine for news</li>
+                    <li>Embassy, airport and hospital data</li>
+                    <li>Geolocation and Google Maps for directions, travel times and specific spike coordinates</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+                <p>Alerts and location allow the traveller to make more informed decisions..</p>
             </div>
             <div class="col-md-6">
                 <img class="img-responsive img-rounded" style = "height: 450px" src="img/grid.png" alt="">
@@ -278,18 +296,26 @@
 				 <h2 id="thesolution" class="page-header">The Solution</h2>
             </div>
             <div class="col-md-6">
-                <p>The solution:</p>
+				 <h3  class="page-header">Processing</h2>				
+                <p>The Twitter “Garden Hose” is connected to the free Twitter API that allows access to a subset of about 1% of the tweet stream for a given area.  This twitter stream output is filtered by latitude and longitude so that only tweets that originate within the continent of Africa are collected. Tweets are loaded using Streamparse and Storm into a PostgreSQL database on an EC2 instance on AWS. </p>
                 <ul>
-                    <li><strong>Bootstrap v3.3.7</strong>
-                    </li>
-                    <li>jQuery v1.11.1</li>
+                    <li>50x50 Grid of Africa</li>
+                    <li>Geolocated Tweets</li>
+                    <li>7 Day Moving Average</li>
+                    <li>Creates a Tweet Spike</li>
+                </ul>
+                <p>Alerts are triggered when a spike passed  500% of the moving daily average.</p>
+				 <h3  class="page-header">Display</h2>				
+                <p>The user interface relies heavily on Node.js, D3, Bootstrap and the Google APIs.  The combination of technologies allows pinpoint accuracy of danger and safe havens and directions that avoid danger.</p>
+                <ul>
                     <li>Node.js</li>
                     <li>D3</li>
-                    <li>Google Maps/Google APIs</li>
-                    <li>Tweet Monitoring</li>
+                    <li>Google APIs</li>
+                    <li>Google Custom Search Engine (for news)</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-            </div>
+                <p>Geolocated alert size is correlated to percentage increase in tweet activity..</p>
+
+				</div>
             <div class="col-md-6">
                 <img class="img-responsive img-rounded" style="height: 450px" src="img/moving_avg.jpg" alt="">
             </div>
